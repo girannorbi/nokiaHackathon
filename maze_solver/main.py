@@ -98,4 +98,4 @@ for maze in mazes: # this piece of code is getting the distance from the goal on
   instructions.append(currentMazeInstructions)
   
 for i in range(len(instructions)):
-  print(string.ascii_uppercase[i] + "\n" + instructions[i])
+  print(string.ascii_uppercase[i] + "\n" + instructions[i] + "\n")
