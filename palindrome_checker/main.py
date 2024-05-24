@@ -14,4 +14,4 @@ with open('./input.txt', 'r') as f:
     if isPalindrome:
       print(f"YES, {uniqueCharachters}")
     else:
-      print(f"NO, {uniqueCharachters}")
+      print(f"NO, -1")
