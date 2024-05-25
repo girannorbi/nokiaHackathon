@@ -33,3 +33,15 @@
     A 42-höz visszateszem azt az előbb elvett egy négyzetet, így megkapom, hogy egyetlen átlóban hány négyzet van pontosan.
     Innentől a feladat már nagyon egyszerű, mivel a kis négyzetek 1 centiméteresek és mivel 43 darab van belőlük egy átlón,
     a négyzet 43x43 centiméteres. Így kijön, hogy a terület 1849 cm^2
+    
+9. feladat:
+    Amit egyből meg tudunk határozni a megadott adatok alapján az az, hogy hányan voltak ott a rendezvényen.
+    Mivel 198 angol köszönés volt és 308 magyar, így összesen 506-szor köszöntek egymásnak az emberek.
+    Minden egyes ember köszön minden másiknak, így az embereket ki lehet számolni a következőképpen:
+    x(x-1) = 506 
+    Ezt az egyenletet átalakítva, megoldóképlettel kiszámolva megkapjuk,
+    hogy összesen 23-an voltak ott a rendezvényen.
+    Ha az angol köszönéseket elosztjuk az összes köszönéssel, megkapjuk az angol köszönések arányát.
+    Ezt az arányt ha felhasználjuk, azaz megszorozzuk a kapott 23-mal, akkor megkapjuk, hogy kilenc
+    angol ember volnt jelen a rendezvényen. 
+    
