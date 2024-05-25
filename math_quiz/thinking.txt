@@ -1,0 +1,25 @@
+1. feladat: 
+    A vonat az alagútba való belépéstől kezdve, tehát attól, hogy a vonat eleje elérte az alagútat, az elhagyásáig tett meg húsz másodpercet,
+    ami a vonat végének az elhagyását jelenti, így a vonat 300 métert tett meg, plusz a saját hosszát a húsz másodperc alatt.
+    Egy egyenletet tudunk felírni így, ami a következő: 300+ x (a vonat hossza) = v (a vonat sebessége m/s-ban) * 20
+    Jelenleg így kettő ismeretlenünk van az egyenletben, ám a feladatban meg van adva egy lámpa, ami alatt a vonat elhalad, ezt 5 másodperc alatt tette meg.
+    A lámpával a vonat hosszát meg tudjuk határozni, ami: 5 * v
+    Ha az egyetnletbe behelyettesítjük a vonat hosszára felírt egyenletünket és levezetjük, akkor azt a megoldást kapjuk,
+    hogy a vonat 20 m/s-al haladt át az alagúton. Miután aztán megvan a vonatunk sebessége, a lámpás egyenletet újra felhasználva megkaphatjuk,
+    hogy x = 5*20, aminek a megoldása 100 méter.
+
+2. feladat:
+    A legnagyobb téglatestet úgy sikerült elérnem, hogy a 6 és 8 centiméter élhosszú kockákat egymásra fektettem rá,
+    a kettő centiméteres kockákat meg a 8 centiméteres kocka valamelyik másik oldalára. 
+    Sok próbálkozást követően, mivel a feladatban nem volt megadva az, hogy mindegyik kockát fel kell használni a végleges téglatesthez,
+    a kettő centiméteres kockákat levágom, mivel túlzottan korlátoznak abban, hogy a lehető legnagyobb téglatestet tudjam kivágni,
+    majd a nyolc centiméteres kockákból vágok le annyit, hogy egy 6x6x8 centiméteres téglatestet kapjak.
+    A 6x6x14 centiméteres téglatest térfogata 504 cm^3
+3. fealdat: 
+    A feladatból tudjuk, hogy a távolság 20 kilóméter volt a nagymamáig, mivel egy biciklijük volt kettőjüknek, ezért mindig csak az egyik biciklizett,
+    míg a másik sétált. Ha X-szel jelöljük azt, hogy Juliska mennyit biciklizett, 20-x-szel tudjuk jelölni, hogy mennyit sétált le.
+    Mivel tudjuk, hogy kettőjük milyen sebességgel biciklizik és sétál, így azokat meg tudjuk adni arányilag az egyenletben:
+    Julcsi esetében a megtett távolság a sebességgel arányosítva: x/10 + 20-x/4 , Jancsi esetében x-20/5 + x/12. 
+    Akkor érkeztek oda egyszerre a nagymamához, ha mindketten ugyanakkora távolságot tettek meg összesítve, így az egyenletünk:
+    x/10 + 20-x/4 = x-20/5 + x/12
+    Ennek az egyenletnek az eredménye x = 12.5, ami azt jelenti, hogy Julcsi 12.5 km-t biciklizett le.

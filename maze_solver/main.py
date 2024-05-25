@@ -23,7 +23,7 @@ with open('./input.txt', 'r') as f:
   mazes.append(currentMaze)
 
 newMazes = []
-for maze in mazes: # this piece of code is getting the distance from the goal on every field
+for maze in mazes: # this piece of code is getting the distance until the goal on every field
   startingpoint = []
   currentMaze = []
   while any("." in row for row in maze):
@@ -53,7 +53,7 @@ for maze in mazes: # this piece of code is getting the distance from the goal on
   maze[startingpoint[0]][startingpoint[1]] = "S"
   currentPos = startingpoint
   currentMazeInstructions = "S"
-  while maze[currentPos[0]][currentPos[1]] != "G":
+  while maze[currentPos[0]][currentPos[1]] != "G": # this piece of code runs until our "carachter" reaches the goal, checks for nearby numbers and goes where the number is the smallest.
     nearbyNumbers = []
     if isinstance(maze[currentPos[0]+1][currentPos[1]], int):
       nearbyNumbers.append(maze[currentPos[0]+1][currentPos[1]])
@@ -64,8 +64,8 @@ for maze in mazes: # this piece of code is getting the distance from the goal on
     if isinstance(maze[currentPos[0]][currentPos[1]-1], int):
       nearbyNumbers.append(maze[currentPos[0]][currentPos[1]-1])
 
-    if maze[currentPos[0]-1][currentPos[1]] == "G":
-      currentPos = [currentPos[0]-1, currentPos[1]]
+    if maze[currentPos[0]-1][currentPos[1]] == "G": # Initially this criteria was in the same if statement where the program checks for where is the smallest number,
+      currentPos = [currentPos[0]-1, currentPos[1]] # but the program would rather go in the direction of the smallest number instead of the goal and by that it would create an endless cycle
       currentMazeInstructions += "U"
       continue
     if maze[currentPos[0]+1][currentPos[1]] == "G":
@@ -81,16 +81,16 @@ for maze in mazes: # this piece of code is getting the distance from the goal on
       currentMazeInstructions += "R"
       continue
         
-    if maze[currentPos[0]-1][currentPos[1]] == "G" or maze[currentPos[0]-1][currentPos[1]] == min(nearbyNumbers):
+    if maze[currentPos[0]-1][currentPos[1]] == min(nearbyNumbers):
       currentPos = [currentPos[0]-1, currentPos[1]]
       currentMazeInstructions += "U"
-    if maze[currentPos[0]+1][currentPos[1]] == "G" or maze[currentPos[0]+1][currentPos[1]] == min(nearbyNumbers):
+    if maze[currentPos[0]+1][currentPos[1]] == min(nearbyNumbers):
       currentPos = [currentPos[0]+1, currentPos[1]]
       currentMazeInstructions += "D"
-    if maze[currentPos[0]][currentPos[1]-1] == "G" or maze[currentPos[0]][currentPos[1]-1] == min(nearbyNumbers):
+    if maze[currentPos[0]][currentPos[1]-1] == min(nearbyNumbers):
       currentPos = [currentPos[0], currentPos[1]-1]
       currentMazeInstructions += "L"
-    if maze[currentPos[0]][currentPos[1]+1] == "G" or maze[currentPos[0]][currentPos[1]+1] == min(nearbyNumbers):
+    if maze[currentPos[0]][currentPos[1]+1] == min(nearbyNumbers):
       currentPos = [currentPos[0], currentPos[1]+1]
       currentMazeInstructions += "R"
   currentMazeInstructions += "G"
