@@ -23,3 +23,13 @@
     Akkor érkeztek oda egyszerre a nagymamához, ha mindketten ugyanakkora távolságot tettek meg összesítve, így az egyenletünk:
     x/10 + 20-x/4 = x-20/5 + x/12
     Ennek az egyenletnek az eredménye x = 12.5, ami azt jelenti, hogy Julcsi 12.5 km-t biciklizett le.
+    
+8. feladat:
+    A kicsi négyzetek, amik a nagy négyzet átlóiban vannak, a feladat szerint 85-en vannak.
+    Mivel egy négyzetben kettő átlónk van és mivel azok az átlók metszik egymást a négyzet közepén,
+    ezért lesz egy négyzetünk, ami mind a kettő átlóban jelen van. Ezért a 85 darabból kivonok egyet.
+    Ezután megvan a két átlónkban lévő kis négyzetek darabszáma, minusz a középen lévő.
+    Elosztom kettővel a négyzetek számát, kapok 42 darab négyzetet. 
+    A 42-höz visszateszem azt az előbb elvett egy négyzetet, így megkapom, hogy egyetlen átlóban hány négyzet van pontosan.
+    Innentől a feladat már nagyon egyszerű, mivel a kis négyzetek 1 centiméteresek és mivel 43 darab van belőlük egy átlón,
+    a négyzet 43x43 centiméteres. Így kijön, hogy a terület 1849 cm^2
