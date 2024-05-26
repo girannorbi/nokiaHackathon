@@ -100,7 +100,6 @@ with open('./input.txt', 'r') as f:
 
     processedOperations.insert(0, operation.replace("", " ").strip())
     results.append(processedOperations)
-
 for i in results:
   for j in i:
     if isinstance(j, str):
