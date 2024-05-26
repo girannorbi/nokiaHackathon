@@ -104,8 +104,8 @@ for i in results:
   for j in i:
     if isinstance(j, str):
       print(j)
-      continue
     else:
+      j.pop(0)
       for row in j:
         print(" ".join(str(number) for number in row))
-    print("")
+      print("")
