@@ -87,7 +87,7 @@ with open('./input.txt', 'r') as f:
           processedOperations.pop(i+1)
           processedOperations.pop(i-1)
           break
-    # adding
+    
     while "+" in processedOperations:
       for i in range(len(processedOperations)):
         if processedOperations[i] == "+":
