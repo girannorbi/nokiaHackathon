@@ -23,7 +23,13 @@
     Akkor érkeztek oda egyszerre a nagymamához, ha mindketten ugyanakkora távolságot tettek meg összesítve, így az egyenletünk:
     x/10 + 20-x/4 = x-20/5 + x/12
     Ennek az egyenletnek az eredménye x = 12.5, ami azt jelenti, hogy Julcsi 12.5 km-t biciklizett le.
-    
+
+7. feladat: 
+    A dobozban 30 darab golyó van, ha 21 golyót kell kivennünk ahhoz, hogy biztosan legyen piros golyónk, az azt jeleni, 
+    hogy a lehető legrosszabb esetben van szükségünk 21 golyó kihúzására ahhoz, hogy legyen piros golyónk.
+    A lehető legrosszabb eset jelenleg az, hogy egészen addig húzzuk ki a golyókat a dobozból, amíg már nincsen már más, csak piros golyó a dobozban.
+    Így, ha 21 golyót húzunk ki a dobozból és a 21. golyó piros, az azt jeleni, hogy a dobozban 20 zöld és kék golyó van és a maradék tíz darab pedig piros.
+       
 8. feladat:
     A kicsi négyzetek, amik a nagy négyzet átlóiban vannak, a feladat szerint 85-en vannak.
     Mivel egy négyzetben kettő átlónk van és mivel azok az átlók metszik egymást a négyzet közepén,
