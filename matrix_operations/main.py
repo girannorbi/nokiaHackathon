@@ -1,63 +1,70 @@
 import re
-import string
 
 with open('./input.txt', 'r') as f:
   input = f.readlines()
 
   results = []
-  matrices = []
+  matrices = [] # structure -> ['name of the matrix', [row1], [row2]...]]
   operations = []
 
-  isMatrix = False
-  currentMatrix = []
-  isAnOperation = False
-  for line in input:
+  operations_block_index = 0 # the start of the instructions block at the end of the file
+  for line_index in range(len(input)):
+    line = input[line_index]
     line = line.replace("\n", "")
-    if len(line) == 1:
-      currentMatrix.append(line[0])
-      isMatrix = True
-      continue
-    if line == "" and isMatrix:
-      matrices.append(currentMatrix)
-      currentMatrix = []
-      isMatrix = False
-    if isMatrix:
-      line.strip()
-      line = re.sub(' +', ' ', line)
-      currentMatrix.append(line.split(" "))
-
+    line = re.sub(" +", " ", line)
     if line == "operations":
-      isAnOperation = True
+      operations_block_index = line_index
+      break
+    if line == "" or line == "matrices":
       continue
 
-    if isAnOperation and line != "":
-      operations.append(line)
+    if len(line) == 1:
+      matrices.append([line])
+    else:
+      matrices[len(matrices)-1].append(line.split(" "))
+
+  for line_index in range(operations_block_index, len(input)):
+    line = input[line_index]
+    line = line.replace("\n", "")
+    line = re.sub(" +", " ", line)
+    if line == "" or line == "operations":
+      continue
+    operations.append(line)
 
 # making the operations
-  def getMatrix(matrixName):
+  def getMatrix(matrix_name):
     for matrix in matrices:
-      if matrix[0] == matrixName:
-        return matrix
-    return False
+      if matrix[0] == matrix_name:
+        provided_matrix = matrix
+        return provided_matrix 
+    print("Hiba a mátrixlekérdezésben!")
+    print("Kapott név: " + matrix_name)
+    exit(1)
   def addMatrices(matrix1, matrix2):
-    newmatrix = [""]
-    currentrow = []
-    if (len(matrix1) == len(matrix2) and len(matrix1[1]) == len(matrix2[1])):
-      for i in range(1, len(matrix1)):
+    if len(matrix1) == len(matrix2) and len(matrix1[1]) == len(matrix2[1]):
+      new_matrix = [""]
+      matrix1 = matrix1[1:len(matrix1)]
+      matrix2 = matrix2[1:len(matrix2)]
+      for i in range(len(matrix1)):
+        current_row = []
         for j in range(len(matrix1[i])):
-          currentrow.append(int(matrix1[i][j]) + int(matrix2[i][j]))
-        newmatrix.append(currentrow)
-        currentrow = []
-      return newmatrix
+          current_row.append(int(matrix1[i][j]) + int(matrix2[i][j]))
+        new_matrix.append(current_row)
+      return new_matrix
     else:
-      print("A mátrixok nem adhatóak össze egymással!")
+      print("A mátrixok nem adhatóak össze egymással! \n"
+            "Összeadott mátrixok: ")
+      for row in matrix1:
+        print(row)
+      for row in matrix2:
+        print(row)
       exit(1)
 
   def multiplyMatrices(matrix1, matrix2):
-    newmatrix = [""]
-    matrix1.pop(0)
-    matrix2.pop(0)
-    if (len(matrix1[0]) == len(matrix2)):
+    if (len(matrix1[1]) == len(matrix2)-1):
+      new_matrix = [""]
+      matrix1 = matrix1[1:len(matrix1)]
+      matrix2 = matrix2[1:len(matrix2)]
       for row in matrix1:
         currentrow = []
         for col in range(len(matrix2[0])):
@@ -65,41 +72,49 @@ with open('./input.txt', 'r') as f:
           for i in range(len(row)):
             total += int(row[i]) * int(matrix2[i][col])
           currentrow.append(total)
-        newmatrix.append(currentrow)
-    return newmatrix
+        new_matrix.append(currentrow)
+      return new_matrix
+    else:
+      print("A mátrixok nem szorozhatóak egymással! \n"
+            "Összeszorzott mátrixok: ")
+      for row in matrix1:
+        print(row)
+      for row in matrix2:
+        print(row)
+      exit(1)
 
   for operation in operations:
     operation = operation.replace(" ", "")
-    processedMatrices = []
-    processedOperations = []
-    for char in operation:
-      if char.isalpha():
-        processedOperations.append(getMatrix(char))
+    processed_operations = [] # the same operations as in the "operation" variable, but the letters are replaced by the real matrices
+    for charachter in operation:
+      if charachter.isalpha():
+        processed_operations.append(getMatrix(charachter))
       else:
-        processedOperations.append(char)
+        processed_operations.append(charachter)
 
-    while "*" in processedOperations:
-      for i in range(len(processedOperations)):
-        if processedOperations[i] == "*":
-          multipliedMatrices = multiplyMatrices(processedOperations[i-1], processedOperations[i+1])
-          processedOperations.pop(i+1)
-          processedOperations.insert(i, multipliedMatrices)
-          processedOperations.pop(i+1)
-          processedOperations.pop(i-1)
-          break
-    
-    while "+" in processedOperations:
-      for i in range(len(processedOperations)):
-        if processedOperations[i] == "+":
-          addedMatrices = addMatrices(processedOperations[i-1], processedOperations[i+1])
-          processedOperations.pop(i+1)
-          processedOperations.insert(i, addedMatrices)
-          processedOperations.pop(i+1)
-          processedOperations.pop(i-1)
+    while "*" in processed_operations:
+      for i in range(len(processed_operations)):
+        if processed_operations[i] == "*":
+          multipliedMatrices = multiplyMatrices(processed_operations[i - 1], processed_operations[i + 1])
+          processed_operations.pop(i + 1)
+          processed_operations.insert(i, multipliedMatrices)
+          processed_operations.pop(i + 1)
+          processed_operations.pop(i - 1)
           break
 
-    processedOperations.insert(0, operation.replace("", " ").strip())
-    results.append(processedOperations)
+    while "+" in processed_operations:
+      for i in range(len(processed_operations)):
+        if processed_operations[i] == "+":
+          addedMatrices = addMatrices(processed_operations[i - 1], processed_operations[i + 1])
+          processed_operations.pop(i + 1)
+          processed_operations.insert(i, addedMatrices)
+          processed_operations.pop(i + 1)
+          processed_operations.pop(i - 1)
+          break
+
+    processed_operations.insert(0, operation.replace("", " ").strip())
+    results.append(processed_operations)
+
 for i in results:
   for j in i:
     if isinstance(j, str):

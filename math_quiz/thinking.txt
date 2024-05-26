@@ -45,8 +45,7 @@
     Mivel 198 angol köszönés volt és 308 magyar, így összesen 506-szor köszöntek egymásnak az emberek.
     Minden egyes ember köszön minden másiknak, így az embereket ki lehet számolni a következőképpen:
     x(x-1) = 506 
-    Ezt az egyenletet átalakítva, megoldóképlettel kiszámolva megkapjuk,
-    hogy összesen 23-an voltak ott a rendezvényen.
+    Ezt az egyenletet átalakítva, megoldóképlettel kiszámolva megkapjuk, hogy összesen 23-an voltak ott a rendezvényen.
     Ha az angol köszönéseket elosztjuk az összes köszönéssel, megkapjuk az angol köszönések arányát.
     Ezt az arányt ha felhasználjuk, azaz megszorozzuk a kapott 23-mal, akkor megkapjuk, hogy kilenc
     angol ember volnt jelen a rendezvényen. 
