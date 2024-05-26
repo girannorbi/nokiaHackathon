@@ -53,16 +53,16 @@ for maze in mazes: # this piece of code is getting the distance to the goal on e
   maze[startingpoint[0]][startingpoint[1]] = "S"
   current_pos = startingpoint
   current_maze_instructions = "S"
-  while maze[current_pos[0]][current_pos[1]] != "G": # this piece of code runs until our "carachter" reaches the goal, checks for nearby numbers and goes where the number is the smallest.
-    nearbyNumbers = []
+  while maze[current_pos[0]][current_pos[1]] != "G":  # Here, after getting the distance to the goal from each field, the character moves always in the direction of the smallest number until it reaches its testination
+    nearby_numbers = []
     if isinstance(maze[current_pos[0] + 1][current_pos[1]], int):
-      nearbyNumbers.append(maze[current_pos[0] + 1][current_pos[1]])
+      nearby_numbers.append(maze[current_pos[0] + 1][current_pos[1]])
     if isinstance(maze[current_pos[0] - 1][current_pos[1]], int):
-      nearbyNumbers.append(maze[current_pos[0] - 1][current_pos[1]])
+      nearby_numbers.append(maze[current_pos[0] - 1][current_pos[1]])
     if isinstance(maze[current_pos[0]][current_pos[1] + 1], int):
-      nearbyNumbers.append(maze[current_pos[0]][current_pos[1] + 1])
+      nearby_numbers.append(maze[current_pos[0]][current_pos[1] + 1])
     if isinstance(maze[current_pos[0]][current_pos[1] - 1], int):
-      nearbyNumbers.append(maze[current_pos[0]][current_pos[1] - 1])
+      nearby_numbers.append(maze[current_pos[0]][current_pos[1] - 1])
 
     if maze[current_pos[0] - 1][current_pos[1]] == "G": # Initially this criteria was in the same if statement where the program checks for where is the smallest number,
       current_pos = [current_pos[0] - 1, current_pos[1]] # but the code would prioritize to go in the direction of the smallest number instead of the goal and by that it would create an endless cycle
@@ -81,21 +81,21 @@ for maze in mazes: # this piece of code is getting the distance to the goal on e
       current_maze_instructions += "R"
       continue
         
-    if maze[current_pos[0] - 1][current_pos[1]] == min(nearbyNumbers):
+    if maze[current_pos[0] - 1][current_pos[1]] == min(nearby_numbers):
       current_pos = [current_pos[0] - 1, current_pos[1]]
       current_maze_instructions += "U"
-    if maze[current_pos[0] + 1][current_pos[1]] == min(nearbyNumbers):
+    if maze[current_pos[0] + 1][current_pos[1]] == min(nearby_numbers):
       current_pos = [current_pos[0] + 1, current_pos[1]]
       current_maze_instructions += "D"
-    if maze[current_pos[0]][current_pos[1] - 1] == min(nearbyNumbers):
+    if maze[current_pos[0]][current_pos[1] - 1] == min(nearby_numbers):
       current_pos = [current_pos[0], current_pos[1] - 1]
       current_maze_instructions += "L"
-    if maze[current_pos[0]][current_pos[1] + 1] == min(nearbyNumbers):
+    if maze[current_pos[0]][current_pos[1] + 1] == min(nearby_numbers):
       current_pos = [current_pos[0], current_pos[1] + 1]
       current_maze_instructions += "R"
   current_maze_instructions += "G"
   current_maze_instructions = " ".join(char for char in current_maze_instructions)
   instructions.append(current_maze_instructions)
-  
+
 for i in range(len(instructions)):
   print(string.ascii_uppercase[i] + "\n" + instructions[i] + "\n")

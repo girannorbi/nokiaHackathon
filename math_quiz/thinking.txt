@@ -24,6 +24,21 @@
     x/10 + 20-x/4 = x-20/5 + x/12
     Ennek az egyenletnek az eredménye x = 12.5, ami azt jelenti, hogy Julcsi 12.5 km-t biciklizett le.
 
+4. feladat:
+    Koordinátarendszerben az origóban lévő körnek a képlete x^2 + y^2 = r^2-el.
+    Ez azt jeleni, hogy ha a kör sugara 5, akkor csak három olyan számunk van, amit ha négyzetre emelünk, akkor megkapjuk a 5^2-ent, azaz a 25-öt.
+    Ezek a számok az: 5, 3, 4.
+    12 darab lehetőségünk van, ami ezeknek a számoknak a variálásával jöhet ki:
+    (5;0), (-5;0), (0;5), (0;-5), (3;4), (4;3), (-3;4), (4;-3), (3;-4), (-4;3), (-3;-4), (-4;-3)
+
+5. feladat:
+    A feladatban említett háromszöget a legkönnyebb módon úgy tudjuk kiszámolni, hogyha meghatározzuk azt a legkissebb téglalapot, amibe az adott háromszög belefér.
+    Ekkor a háromszög területe annak a téglalap területének a fele lesz.
+    A téglalap oldalainak hosszát meg tudjuk határozni a háromszögben adott pontok X és Y szélsőértékeinek a külöbségével.
+    Mivel a területünk ismert, ezért a terület kétszerese lesz a téglalap területe, egy oldalt ismerünk, ezért csak elvégezzük a téglalap területére használt egyenletet.
+    Így, kijön, hogy a téglalap ismeretlen oldala 2 cm hosszú, amit ha a legkissebb X koordinátánkhoz hozzáadunk, akkor megkapjuk a hiányzó koordinátánkat.
+    
+
 7. feladat: 
     A dobozban 30 darab golyó van, ha 21 golyót kell kivennünk ahhoz, hogy biztosan legyen piros golyónk, az azt jeleni, 
     hogy a lehető legrosszabb esetben van szükségünk 21 golyó kihúzására ahhoz, hogy legyen piros golyónk.
