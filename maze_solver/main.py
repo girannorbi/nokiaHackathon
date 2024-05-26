@@ -32,7 +32,7 @@ for maze in mazes: # this piece of code is getting the distance to the goal on e
         if maze[rowIndex][colIndex] == 'S':
           startingpoint = [rowIndex, colIndex]
           maze[rowIndex][colIndex] = "."
-        if maze[rowIndex][colIndex] == 'G':
+        if maze[rowIndex][colIndex] == "G":
           if maze[rowIndex-1][colIndex] == ".":
             maze[rowIndex-1][colIndex] = 1
           if maze[rowIndex+1][colIndex] == ".":
