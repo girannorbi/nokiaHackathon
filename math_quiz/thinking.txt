@@ -34,10 +34,10 @@
 5. feladat:
     A feladatban említett háromszöget a legkönnyebb módon úgy tudjuk kiszámolni, hogyha meghatározzuk azt a legkissebb téglalapot, amibe az adott háromszög belefér.
     Ekkor a háromszög területe annak a téglalap területének a fele lesz.
-    A téglalap oldalainak hosszát meg tudjuk határozni a háromszögben adott pontok X és Y szélsőértékeinek a külöbségével.
-    Mivel a területünk ismert, ezért a terület kétszerese lesz a téglalap területe, egy oldalt ismerünk, ezért csak elvégezzük a téglalap területére használt egyenletet.
-    Így, kijön, hogy a téglalap ismeretlen oldala 2 cm hosszú, amit ha a legkissebb X koordinátánkhoz hozzáadunk, akkor megkapjuk a hiányzó koordinátánkat.
-    
+    Mivel tudjuk, hogy c egy és három között van, ezért biztosra meg tudjuk mondani, hogy a téglalap, amibe a háromszög belefér 6 egységnnyi magas és 3 egységnyi széles.
+    Egyenletet tudunk felírni arra, hogy az eredeti háromszögünk, a benne lévő derékszögű háromszögek egyenlőek a négyszög területével, így az egyenlet így néz ki:
+    7 + 4*3/2 + 2c/2 + (3-c)*6/2 = 6x3
+    A megoldása a C-nek így: 2, tehát a háromszög harmadik pontjában lévő hiányzó koordináta az kettő.
 
 7. feladat: 
     A dobozban 30 darab golyó van, ha 21 golyót kell kivennünk ahhoz, hogy biztosan legyen piros golyónk, az azt jeleni, 
